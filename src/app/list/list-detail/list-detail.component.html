@@ -1,0 +1,77 @@
+<div class="film" *ngIf="filmItem">
+  <div class="film-banner" [style.background-image]="'url(' + bannerSrc +')'">
+      <div class="film-banner__block">
+          <div class="film-banner__block-left">
+              <p class="name">Star wars. Episode {{filmItem.episode_id}}: {{filmItem.title}}</p>
+              <button class="button">Смотреть от {{price}} р</button>
+              <p class="info">Star wars. Episode {{filmItem.episode_id}}: {{filmItem.title}}</p>
+              <p class="info">{{filmItem.release_date | slice:0:4}}, {{filmItem.country}}, {{filmItem.duration}}</p>
+              <div class="genres" *ngIf="filmItem.genre">
+                <div *ngFor="let item of filmItem.genre" class="genres-item">
+                  {{item}}
+                </div>
+              </div>
+          </div>
+          <div class="film-banner__block-right">
+              <div class="rating">
+                  <span class="rating__big">{{filmItem.rating}}</span>
+                  <span class="rating__small">IMDb</span>
+              </div>
+              <div class="icons">
+                  <button class="icons__add"></button>
+                  <button (click)="watched()" [className]="filmItem.watched ? 'icons__watched' : 'icons__unwatched'"></button>
+                  <button class="icons__rating">Оценить</button>
+              </div>
+              <div class="stars">
+                  <div class="stars__block">
+                      <div *ngFor="let item of starsPositive" class="positive">
+                        <svg>
+                          <use xlink:href="../../../assets/icons/stars.svg#star"></use>
+                        </svg>
+                  </div>
+                  <div *ngFor="let item of starsEmpty">
+                    <svg>
+                      <use xlink:href="../../../assets/icons/stars.svg#star"></use>
+                    </svg>
+                  </div>
+                </div>
+                <div class="stars__text">
+                    <span>12+</span>
+                    <span>Full HD</span>
+                </div>
+            </div>
+        </div>
+      </div>
+  </div>
+  <div class="film-content">
+    <div class="film-content__left">
+      <p class="title">О фильме</p>
+      <div class="film-content__left-about">{{filmItem.opening_crawl}}</div>
+    </div>
+    <div class="film-content__right">
+      <p class="title">Трейлер</p>
+      <div class="film-content__right-video">
+        <img src="../../../assets/icons/play.svg" alt="">
+        <!--iframe width="340" height="189" src="https://www.youtube.com/embed/CWxO08d00Io" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe-->
+      </div>
+    </div>
+  </div>
+  <div class="film-characters">
+    <p class="title">Персонажи</p>
+    <div class="content">
+      <div class="content__persons">
+        <div class="content__persons-card" *ngFor="let person of filmCharacters, let i=index">
+          <div *ngIf="i < countVisibleItems" class="item">
+            <div class="photo">
+              <img src="../../../assets/images/{{person.name}}.jpg" onerror="this.src='../../../assets/images/sw.png'">
+            </div>
+            <div class="name">
+              {{person.name}}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content__more" (click)="showMore()">+Еще</div>
+    </div>
+  </div>
+</div>

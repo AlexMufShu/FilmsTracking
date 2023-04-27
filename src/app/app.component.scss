@@ -1,0 +1,10 @@
+@import '../assets/styles/common/colors';
+
+:host {
+  max-width: 1060px;
+  display: block;
+  height: 100vh;
+  background: $color-shark;
+  margin-left: auto;
+  margin-right: auto;
+}
