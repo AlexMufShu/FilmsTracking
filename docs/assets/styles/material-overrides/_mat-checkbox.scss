@@ -1,0 +1,27 @@
+@import "../common/colors";
+
+.kinostorm-theme {
+
+  .mat-checkbox-frame {
+    background: none;
+    border: none;
+  }
+
+  .mat-checkbox-background {
+    border: 2px solid grey;
+  }
+
+  .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: $color-jungle-green;
+    border: 2px solid $color-jungle-green;
+  }
+
+  md-checkbox.dotted .md-icon {
+    border-width: 1px;
+    border-style: dashed;
+  }
+
+  .mat-checkbox-input {
+    display: none;
+  }
+}

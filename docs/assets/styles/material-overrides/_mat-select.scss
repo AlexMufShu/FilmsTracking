@@ -1,0 +1,79 @@
+@import "../common/colors";
+
+.kinostorm-theme {
+  .mat-form-field-type-mat-select {
+    cursor: pointer;
+    height: 19px;
+    width: 19px;
+    display: flex;
+    text-align: center;
+    overflow: hidden;
+  }
+
+  .cdk-overlay-pane {
+    margin-top: 2%;
+    margin-left: -15%;
+  }
+
+  .mat-select-panel-wrap {
+    background: $color-shark;
+    box-shadow: 0px 0px 20px rgb(0 0 0 / 50%);
+    border-radius: 10px;
+    min-width: 238px!important;
+  }
+
+  .cdk-overlay-pane .mat-select-panel .mat-option {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.15px;
+    color: $color-timberwolf;
+    width: 88%!important;
+    padding: 7px 0 0 54px;
+    position: relative;
+    display: block;
+  }
+
+  .mat-option:hover {
+    background: $color-light-shark;
+  }
+
+  .mat-select-trigger {
+    display: block;
+    width: 19px;
+    height: 19px;
+    background-image: url("/assets/icons/settings.png");
+    border: none;
+    background-color: transparent;
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  .mat-select-value-text {
+    display: none;
+  }
+
+  .mat-select-panel {
+    padding: 25px 0!important;
+    min-width: 112px;
+    max-width: 238px;
+    overflow: hidden;
+  }
+
+  .cdk-overlay-pane .mat-select-panel .mat-selected {
+    color: #28A396;
+  }
+
+  .mat-selected .mat-option-text::before{
+      position: absolute;
+      display: inline-block;
+      content: " ";
+      background-image: url('/assets/icons/checked.svg');
+      width: 18px;
+      height: 14px;
+      background-size: cover;
+      left: 8%;
+      top: 25%;
+  }
+}
